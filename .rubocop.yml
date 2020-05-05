@@ -7,4 +7,4 @@ AllCops:
     - Gemfile.lock
     - db/schema.rb
     - Rakefile
-    - ERADME.md
+    - README.md
