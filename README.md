@@ -13,10 +13,10 @@
 |birthday|date|null: false|
 ### Association
 - has_many :comments dependent: :destroy
-- has_many :items　dependent: :destroy
+- has_many :items dependent: :destroy
 - has_many :orders dependent: :destroy
-- belongs_to :address dependent: :destroy
-- belong_to :credit_card dependent: :destroy
+- has_many :address dependent: :destroy
+- has_many :credit_card dependent: :destroy
 
 
 ## credit_cardsテーブル
@@ -66,7 +66,6 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image_id|references|null: false, foreign_key: true|
 |name|text|null: false|
 |introduction|string|null: false|
 |category_id|references|null: false, foreign_key: true|
