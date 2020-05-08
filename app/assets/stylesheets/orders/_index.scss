@@ -27,15 +27,15 @@ body {
       padding: 30px;
       justify-content: center;
       border-top: 1px solid #cecdcd;
-      &_image {
+      &__image {
         height: 100px;
         width: 100px;
       }
-      &_details {
+      &__details {
         height: 100px;
         text-align: left;
         padding-left: 10px;
-        .product_name {
+        .product__name {
           height: 50px;
         }
         .casher {
@@ -64,7 +64,7 @@ body {
     }
     .shipping {
       padding: 10px;
-      &_address {
+      &__address {
         text-align: center;
       }
     }
