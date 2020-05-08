@@ -1,45 +1,46 @@
-.overall
-  .header
-    = link_to root_path do
-      = image_tag "material/logo/logo.png"
-  .contents
-    .title
-      購入内容の確認
-    .product
-      %img.product_image{alt: "product", src: "https://media.gettyimages.com/photos/one-white-surgical-mask-picture-id589335252?s=2048x2048"}/
-      .product_details
-        .product_name
-          使い捨てマスク
-        .casher
-          .money
-            ¥10,000
-          .postage
-            送料込み
-    %ul
-      %li.price_title
-        支払い金額
-      %li.price_total
-        ¥10,000
-    .payment
+%body
+  .overall
+    .header
+      = link_to root_path do
+        = image_tag "material/logo/logo.png"
+    .contents
+      .title
+        購入内容の確認
+      .product
+        %img.product_image{alt: "product", src: "https://media.gettyimages.com/photos/one-white-surgical-mask-picture-id589335252?s=2048x2048"}/
+        .product_details
+          .product_name
+            使い捨てマスク
+          .casher
+            .money
+              ¥10,000
+            .postage
+              送料込み
       %ul
-        %li.payment_title
-          支払い方法
-        %li
-          %a{href: "#"} 変更する
-      %p
-        クレジットカード
-        %br/
-        *******1234
-        %br/
-        有効期限00/00
-    .shipping
-      %ul
-        %li.shipping_title
-          配送先
-        %li
-          %a{href: "#"} 変更する
-      .shipping_address
-        〇〇県▲▲市
-    .buy
-      %button{name: "aaa", type: "button", value: "aaa"}
-        購入する
+        %li.price_title
+          支払い金額
+        %li.price_total
+          ¥10,000
+      .payment
+        %ul
+          %li.payment_title
+            支払い方法
+          %li
+            %a{href: "#"} 変更する
+        %p
+          クレジットカード
+          %br/
+          *******1234
+          %br/
+          有効期限00/00
+      .shipping
+        %ul
+          %li.shipping_title
+            配送先
+          %li
+            %a{href: "#"} 変更する
+        .shipping_address
+          〇〇県▲▲市
+      .buy
+        %button{name: "aaa", type: "button", value: "aaa"}
+          購入する
