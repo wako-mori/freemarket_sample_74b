@@ -30,7 +30,7 @@
 $theme-color:#3CCACE;
 
 
-.Header{
+.header{
   width: 100%;
   padding: 25px 200px 0 200px;
   &__Inner{
@@ -78,13 +78,13 @@ $theme-color:#3CCACE;
       padding: 0 0 0 5px;
     }
   }
-  .Nav{
+  &__Nav{
     font-size: 14px;
     margin-bottom: 10px;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    .listsLeft{
+    &__listsLeft{
       position: relative;
       display: flex;
       &__item {
@@ -106,7 +106,7 @@ $theme-color:#3CCACE;
         }
       }
     }
-    .listsRight{
+    &__listsRight{
       font-size: 14px;
       display: flex;
       margin-bottom: 10px;

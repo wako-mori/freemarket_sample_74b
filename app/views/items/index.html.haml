@@ -1,41 +1,22 @@
 %body
-  .Main
-    .MainVisual
-      .MainVisual__Content
-        %h2.MainVisual__Content__Subtitle
+  .main
+    .mainVisual
+      .mainVisual__Content
+        %h2.mainVisual__Content__Subtitle
           %br/
           人生を変えるフリマアプリ
-        %p.MainVisual__Content__Text
+        %p.mainVisual__Content__Text
           FURIMAはだれでもかんたんに出品・購入できる
           %br/
           フリマアプリです
-        .MainVisual__Content__Btn
+        .mainVisual__Content__Btn
           %a.aBtn{href: "#"}
             = image_tag "material/app-store.svg", class:"image"
 
           %a.gBtn{href: "#"}
             = image_tag "material/google-play.svg", class:"image"
-      /
-        <div class="mainVisual">
-        <div class="content">
-        <h2 class="content__subtitle">
-        <br>
-        人生を変えるフリマアプリ
-        </h2>
-        <p class="content__text">
-        FURIMAはだれでもかんたんに出品・購入できる
-        <br>
-        フリマアプリです
-        </p>
-        <div class="content__btn">
-        <a class="aBtn" href="#"></a>
-        <a class="gBtn" href="#"><img src="/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"></a>
-        </div>
-        </div>
-        <div class="picture">Visual
-        </div>
-    .TopIntroduction
-      %h2.TopIntroduction__Subtitle
+    .topIntroduction
+      %h2.topIntroduction__Subtitle
         FURIMAが選ばれる3つの理由
       %ul.lists.container
         %li.list
@@ -65,10 +46,10 @@
             %span 業界最安
           %p.list__description
             最大3%でお得に出品&amp;購入！
-    .TopMiddleDl
-      .TopMiddleDl__Inner
-        %h2.TopMiddleDl__Inner__Subtitle 会員数日本一位
-        %p.TopMiddleDl__Inner__Text
+    .topMiddleDl
+      .topMiddleDl__Inner
+        %h2.topMiddleDl__Inner__Subtitle 会員数日本一位
+        %p.topMiddleDl__Inner__Text
           FURIMAは、フリマアプリで最も人気。
           %br/
           出品・購入回数も業界最多です！
@@ -79,7 +60,7 @@
             = image_tag "material/app-store.svg", class:"image"
           %a.gBtn{href: "#"}
             = image_tag "material/google-play.svg", class:"image"
-    .TopKeyFeatures
+    .topKeyFeatures
       %h2.head FURIMAの特徴
       .items
         .item
@@ -193,11 +174,11 @@
                       %i.fa.fa-star.likeIcon
                       0
                   %p (税込)
-  %aside.AppBanner
-    .AppBanner__Inner
-      %h2.AppBanner__Inner__Title だれでもかんたん、人生を変えるフリマアプリ
-      %p.AppBanner__Inner__Text 今すぐ無料ダウンロード！
-      .AppBanner__Inner__Icon
+  %aside.appBanner
+    .appBanner__Inner
+      %h2.appBanner__Inner__Title だれでもかんたん、人生を変えるフリマアプリ
+      %p.appBanner__Inner__Text 今すぐ無料ダウンロード！
+      .appBanner__Inner__Icon
         %a{href:"#"}
           = image_tag "material/app-store.svg", class:"image"
         %a{href: "#"}
