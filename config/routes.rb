@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :user
- 
+  resources :user do
+    resources :creditcard, only: [:new] do
+    end
+  end
 end
