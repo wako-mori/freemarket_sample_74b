@@ -21,7 +21,12 @@
 
 @import "reset";
 @import "color";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "items/index";
+@import "registrations/new";
+
+
 
 // 色定義
 $theme-color:#3CCACE;
