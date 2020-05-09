@@ -248,22 +248,25 @@
         width: 780px;
         margin: 26px auto;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
         .productList {
           width: 220px;
+          margin-bottom:20px ;
           display: inline-block;
           a {
             background-color: $color-productLists-a;
-            display: inline-block;
+            display: block;
             text-decoration: none;
             position: relative;
+            margin: 0 auto;
           }
           &--img {
-            width: 220px;
+            width: 180px;
             height: 150px;
             position: relative;
             overflow: hidden;
-            margin: 0;
+            margin: 0 auto;
             z-index: auto;
         }
           &--body {
