@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'creditcard/new'
+
   get 'orders/index'
 
   root 'items#index'
