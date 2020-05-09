@@ -20,8 +20,15 @@
 */
 
 @import "reset";
+@import "font-awesome-sprockets";
 @import "color";
+@import "font-awesome";
+@import "module/header";
+@import "module/footer";
 @import "items/index";
+@import "items/show";
+@import "orders/index";
+@import "items/new";
 @import "registrations/new";
 
 
