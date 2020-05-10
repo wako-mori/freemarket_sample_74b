@@ -1,0 +1,57 @@
+
+.loginMain{
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  .loginBox{
+    width: 600px;
+    height: 500px;
+    background-color: pink;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    .boxMain{
+      padding: 10px;
+      border-radius: 5px;
+      width: 100%;
+      background-color: orange;
+      &__Top{
+        padding: 10px;
+        &__Title{
+          color: white;
+          font-weight: bold;
+          text-align: center;
+
+        }
+
+      }
+      &__body{
+        &__Form{
+          margin-top:10px ;
+          &--btn{
+            margin-top: 20px;
+            padding: 20px;
+            width: 100%;
+            font-weight: bold;
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            border-bottom: none;
+            &:hover{
+              background-color:lighten(green, 10%);
+              text-decoration: none;
+              color: white;
+            }
+            &:active {
+              /*ボタンを押したとき*/
+              -webkit-transform: translateY(4px);
+              transform: translateY(4px);/*下に動く*/
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

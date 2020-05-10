@@ -1,17 +1,38 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    / CSS
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", :rel => "stylesheet"}/
+    / JS
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"}
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"}
+    %link{:href => "stylesheet.css", :rel => "stylesheet"}/
+    %title Document
+  %body
+    ​
+    ​
+    ​
+    
+    ​
+    .loginMain
+      .loginBox
+        .boxMain
+          .boxMain__Top
+            %h3.boxMain__Top__Title ログイン画面
+          .boxMain__body
+            %form{"accept-charset" => "UTF-8", :role => "form"}
+              %fieldset
+                .boxMain__body__Form
+                  %input.form-control{:name => "email", :placeholder => "yourmail@example.com", :type => "text"}/
+                .boxMain__body__Form
+                  %input.form-control{:name => "password", :placeholder => "Password", :type => "password", :value => ""}/
+                %input.boxMain__body__Form--btn{:type => "submit", :value => "ログイン"}/
+    ​
+    ​
+    ​
+    ​
+    ​
+    ​
