@@ -1,57 +1,20 @@
-
-.loginMain{
-  height: 100%;
-  width: 100%;
-  background-color: red;
-  .loginBox{
-    width: 600px;
-    height: 500px;
-    background-color: pink;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    .boxMain{
-      padding: 10px;
-      border-radius: 5px;
-      width: 100%;
-      background-color: orange;
-      &__Top{
-        padding: 10px;
-        &__Title{
-          color: white;
-          font-weight: bold;
-          text-align: center;
-
-        }
-
-      }
-      &__body{
-        &__Form{
-          margin-top:10px ;
-          &--btn{
-            margin-top: 20px;
-            padding: 20px;
-            width: 100%;
-            font-weight: bold;
-            background-color: green;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            border-bottom: none;
-            &:hover{
-              background-color:lighten(green, 10%);
-              text-decoration: none;
-              color: white;
-            }
-            &:active {
-              /*ボタンを押したとき*/
-              -webkit-transform: translateY(4px);
-              transform: translateY(4px);/*下に動く*/
-            }
-
-          }
-        }
-      }
+  .main__box__top2 {
+    background-color: #ffffff;
+    width : 700px;
+    text-align: center;
+    padding: 32px;
+    border-bottom: solid 1px #f5f5f5;
+    color: #333333;
+    .main__box__bottom__content__btn2 {
+      background-color: #3CCACE;
+      color: #ffffff;
+      font-size: 14px;
+      height: 50px;
+      margin: 0auto;
+      margin-top: 7px;
+      width: 342px;
+      border: none;
+      padding: 0;
+      cursor: pointer;
     }
   }
-}
