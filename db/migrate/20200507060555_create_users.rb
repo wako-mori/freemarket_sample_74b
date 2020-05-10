@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string	:family_name_kana,	null: false
       t.date	:first_name_kana,	null: false
       t.date	:birthday,	null: false
-
+ 
       t.timestamps
     end
   end
