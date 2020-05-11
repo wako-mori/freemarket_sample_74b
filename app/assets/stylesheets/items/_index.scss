@@ -3,7 +3,7 @@
   background: $color-main-background;
   .mainVisual{
     width: 100%;
-    background-image: url(material/pict/bg-mainVisual-pict_pc.jpg) ;
+    background-image: image-url("material/pict/bg-mainVisual-pict_pc.jpg") ;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
@@ -125,7 +125,7 @@
     }
   }
   .topMiddleDl{
-    background-image: url(material/pict/bg-topMiddleDl-pict.jpg);
+    background-image: image-url("material/pict/bg-topMiddleDl-pict.jpg");
       background-position: bottom right;
       height: 400px;
       background-size: cover;
@@ -248,22 +248,25 @@
         width: 780px;
         margin: 26px auto;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
         .productList {
           width: 220px;
+          margin-bottom:20px ;
           display: inline-block;
           a {
             background-color: $color-productLists-a;
-            display: inline-block;
+            display: block;
             text-decoration: none;
             position: relative;
+            margin: 0 auto;
           }
           &--img {
-            width: 220px;
+            width: 180px;
             height: 150px;
             position: relative;
             overflow: hidden;
-            margin: 0;
+            margin: 0 auto;
             z-index: auto;
         }
           &--body {
@@ -298,7 +301,7 @@
 
 
 .appBanner {
-  background-image: url(material/pict/bg-appBanner-pict.jpg);
+  background-image: image-url("material/pict/bg-appBanner-pict.jpg");
   padding: 100px 40px;
   position: relative;
   background-size: cover;
