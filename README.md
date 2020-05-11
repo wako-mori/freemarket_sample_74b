@@ -7,9 +7,9 @@
 |email|string|null: false, unique: true, index: true|
 |password|string|null: false|
 |family_name|string|null: false|
-|first_name|date|null: false|
+|first_name|string|null: false|
 |family_name_kana|string|null: false|
-|first_name_kana|date|null: false|
+|first_name_kana|string|null: false|
 |birthday|date|null: false|
 ### Association
 - has_many :comments dependent: :destroy
@@ -90,16 +90,6 @@
 ### Association
 - belongs_to :product, optional: true 
 
-
-<<<<<<< Updated upstream
-## imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|string|null: false|
-|item_id|reference|null: false, foreign_key: true|
-### Association
-- belongs_to :item
-
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -107,47 +97,3 @@
 ### Association
 - has_many :items
 
-## sizesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-### Association
-- has_many :items
-
-## brandsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-### Association
-- has_many :items
-
-## item_conditionsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-### Association
-- has_many :items
-
-## postage_playersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|postage_players|string|null: false|
-### Association
-- has_many :items
-
-## regionsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|region|string|null: false|
-### Association
-- has_many :items
-
-## preparation_daysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|preparation_day|string|null: false|
-### Association
-- has_many :items
-=======
-* ...
->>>>>>> Stashed changes
