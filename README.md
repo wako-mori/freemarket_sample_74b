@@ -22,11 +22,9 @@
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false|
-|expiration_year|integer|null: false|
-|expiration_month|integer|null: false|
-|security|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 ### Association
 - belongs_to :user
 
@@ -66,32 +64,34 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
-|introduction|string|null: false|
-|category_id|references|null: false, foreign_key: true|
-|size_id|references|null: false, foreign_key: true|
-|brand_id|references|foreign_key: true|
-|item_condition_id|references|null: false, foreign_key: true|
-|postage_player_id|references|null: false, foreign_key: true|
-|region_id|references|null: false, foreign_key: true|
-|preparation_day_id|references|null: false, foreign_key: true|
+|name|string|null: false|
+|introduction|text|null: false|
+|category|string|null: false|
+|size|string||
+|brand|string||
+|condition|string|null: false|
+|postage_player|string|null: false|
+|region|string|null: false|
+|preparation_days|integer|null: false|
 |price|integer|null: false|
-|user_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
-- has_many :comments dependent: :destroy
-- has_many :images dependent: :destroy
-- has_many :orders dependent: :destroy
 - belongs_to :user dependent: :destroy
-- belongs_to :category dependent: :destroy
-- belongs_to :size dependent: :destroy
-- belongs_to :bland dependent: :destroy
-- belongs_to :item_condition dependent: :destroy
-- belongs_to :postage_player dependent: :destroy
-- belongs_to :region dependent: :destroy
-- belongs_to :preparation_day dependent: :destroy
+- has_many   :images, dependent: :destroy
+#### Validation
+- validates :name, :introduction, :category, :condition, :postage_player, :region, :preparation_days, :price, presence: true
+- validates :price, numericality: { only_integer: true , greater_than: 0, less_than: 9999999 }
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|item|reference|null: false, foreign_key: true|
+### Association
+- belongs_to :product, optional: true 
 
 
-
+<<<<<<< Updated upstream
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -148,3 +148,6 @@
 |preparation_day|string|null: false|
 ### Association
 - has_many :items
+=======
+* ...
+>>>>>>> Stashed changes
