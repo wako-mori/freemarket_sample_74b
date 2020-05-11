@@ -36,7 +36,7 @@
 |city|string|null: false|
 |block|string|null: false|
 |building|string|
-|phone_number|integer|unique: true|
+|phone_number|string|unique: true|
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
