@@ -6,11 +6,11 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
-      t.string   :reset_password_token
-      t.datetime :reset_password_sent_at
+      # t.string   :reset_password_token
+      # t.datetime :reset_password_sent_at
 
-      ## Rememberable
-      t.datetime :remember_created_at
+      # ## Rememberable
+      # t.datetime :remember_created_at
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
@@ -30,26 +30,19 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+        # t.string	:nickname,	null: false
+        # t.string	:email,	null: false, unique: true, index: true
+        # t.string	:password,	null: false
+        # t.string	:family_name,	null: false
+        # t.string	:first_name,	null: false
+        # t.string	:family_name_kana,	null: false
+        # t.string	:first_name_kana,	null: false
+        # t.date	:birthday,	null: false
+   
 
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end
 
 
-# class CreateUsers < ActiveRecord::Migration[5.0]
-#   def change
-#     create_table :users do |t|
-#       t.string	:nickname,	null: false
-#       t.string	:email,	null: false, unique: true, index: true
-#       t.string	:password,	null: false
-#       t.string	:family_name,	null: false
-#       t.date	:first_name,	null: false
-#       t.string	:family_name_kana,	null: false
-#       t.date	:first_name_kana,	null: false
-#       t.date	:birthday,	null: false
- 
-#       t.timestamps
-#     end
-#   end
-# end
