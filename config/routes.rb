@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'creditcard/new'  
-  get 'orders/index'   
+  get 'creditcard/new'  #users情報を登録した後に削除
+  get 'orders/index'   #items情報を登録した後に削除
   get 'users/show'
-  # get 'creditcard/new'  #users情報を登録した後に削除
-  # get 'orders/index'    #items情報を登録した後に削除
+  get 'creditcard/show'  #users情報を登録した後に削除
+  
 
   root 'items#index'
   devise_for :users
@@ -14,12 +14,13 @@ Rails.application.routes.draw do
   end
 
   resources :user, only: [:index, :new] do
-    resources :creditcard, only: [:new, :show] do
-      collection do
-        post 'show', to: 'card#show'
-        post 'pay', to: 'card#pay'
-        post 'delete', to: 'card#delete'
-      end
+  end
+
+  resources :creditcard, only: [:new, :show] do
+    collection do
+      post 'show', to: 'creditcard#show'
+      post 'pay', to: 'creditcard#pay'
+      post 'delete', to: 'creditcard#delete'
     end
   end
 end

@@ -75,3 +75,4 @@ gem 'devise'
 gem "font-awesome-sass"
 gem 'payjp'
 gem 'dotenv-rails'
+gem 'jquery-rails'
