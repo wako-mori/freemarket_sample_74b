@@ -9,12 +9,15 @@
         %span.require 必須
       .new-wrapper__main__text
         最大10枚までアップロードできます
-      .new-wrapper__main__image-field
-        %i{class: "fas fa-camera"}
-        .new-wrapper__main__image-field__text
-          ドラッグアンドドロップ
-          %br
-          またはクリックしてファイルをアップロード
+      %label{class: "flexbox"}
+        .new-wrapper__main__image-field
+          %i{class: "fas fa-camera"}
+          .new-wrapper__main__image-field__text
+            ドラッグアンドドロップ
+            %br
+            またはクリックしてファイルをアップロード
+        = f.fields_for :images do |i|
+          = i.file_field :image, {class: "file-field"}
     .new-wrapper__main
       .new-wrapper__main__title
         商品名
@@ -31,11 +34,6 @@
         カテゴリー
         %span.require 必須
       = f.select :category, [["選択してください",""],"レディース","メンズ","ベビー・キッズ","インテリア・住まい・小物","本・音楽・ゲーム","おもちゃ・ホビー・グッズ","コスメ・香水・美容","家電・スマホ・カメラ","スポーツ・レジャー","ハンドメイド","チケット","自動車・オートバイ","その他"], {}, class: "new-wrapper__main__input-select"
-      -# %select{class: "new-wrapper__main__input-select"}
-      -#   %option{value: "0"} 選択してください
-      -#   %option{value: "1"} 選択肢1
-      -#   %option{value: "2"} 選択肢2
-      -#   %option{value: "3"} 選択肢3
       .new-wrapper__main__title.spacing
         ブランド
         %span.any 任意

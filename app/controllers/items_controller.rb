@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @item.images.new
   end
 
   def show
@@ -33,7 +34,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :introduction, :category, :size, :brand, :condition, :postage_player, :region, :preparation_days, :price).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :introduction, :category, :size, :brand, :condition, :postage_player, :region, :preparation_days, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
 end
