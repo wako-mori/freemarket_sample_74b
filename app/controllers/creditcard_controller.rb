@@ -3,8 +3,8 @@ class CreditcardController < ApplicationController
   require "payjp"
 
   def new
-    # card = Credeit_card.where(user_id: current_user.id)
-    # redirect_to action: "show" if card.exists?
+    card = CreditCard.where(user_id: current_user.id)
+    redirect_to action: "show" if card.exists?
   end
 
   def pay
@@ -16,7 +16,7 @@ class CreditcardController < ApplicationController
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
       )
-      @card = Credeit_card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to action: "show"
       else
@@ -26,7 +26,7 @@ class CreditcardController < ApplicationController
   end
 
   def delete
-    card = Credeit_card.where(user_id: current_user.id).first
+    card = CreditCard.where(user_id: current_user.id).first
     if card.blank?
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -38,7 +38,7 @@ class CreditcardController < ApplicationController
   end
 
   def show
-    card = Credeit_card.where(user_id: current_user.id).first
+    card = CreditCard.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new"
     else
