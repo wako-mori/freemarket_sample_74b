@@ -73,6 +73,9 @@ gem 'haml-rails'
 
 gem 'devise'
 gem "font-awesome-sass"
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'ancestry'
 gem 'payjp'
 gem 'dotenv-rails'
 gem 'jquery-rails'
