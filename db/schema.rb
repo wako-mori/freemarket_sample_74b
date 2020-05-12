@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20200508261700) do
     t.text     "introduction",     limit: 65535, null: false
     t.string   "category",                       null: false
     t.string   "size"
+    t.string   "brand"
     t.string   "condition",                      null: false
     t.string   "postage_player",                 null: false
     t.string   "region",                         null: false

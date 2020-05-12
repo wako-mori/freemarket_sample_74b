@@ -1,12 +1,12 @@
 class ItemsController < ApplicationController
 
-
   def index
     @items = Item.all.order(created_at: :desc)
     render layout: 'compact'
   end
 
   def new
+    @item = Item.new
   end
 
   def show
@@ -14,6 +14,12 @@ class ItemsController < ApplicationController
   end
 
   def create
+    @item = Item.new(item_params)
+    if @item.valid?
+      @item.save
+    else
+      redirect_to new_items_path
+    end
   end
 
   def destroy
@@ -26,7 +32,8 @@ class ItemsController < ApplicationController
   end
 
   private
-  def aaa
+  def item_params
+    params.require(:item).permit(:name, :introduction, :category, :size, :brand, :condition, :postage_player, :region, :preparation_days, :price).merge(user_id: current_user.id)
   end
 
 end
