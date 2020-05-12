@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :user only: [:index, :new] do
+  resources :user, only: [:index, :new] do
     resources :creditcard, only: [:new, :show] do
       collection do
         post 'show', to: 'card#show'
