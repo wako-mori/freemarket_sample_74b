@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20200508261700) do
     t.integer  "price",                          null: false
     t.integer  "user_id",                        null: false
     t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
