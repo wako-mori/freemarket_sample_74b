@@ -16,7 +16,6 @@
     padding: 10px;
     &__number {
       width: 200px;
-      display: flex;
       padding-top: 20px;
       &--title {
       font-weight: 700;
@@ -30,10 +29,10 @@
         text-align: center;
         margin-left: 10px;
       }
-    }
-    input {
-      height: 50px;
-      width: 100%;
+      .number {
+        height: 50px;
+        width: 100%;
+      }
     }
     img {
       width: 50%;
@@ -41,7 +40,6 @@
     }
     .creditcard__limit {
       width: 200px;
-      display: flex;
       margin: 10px 0;
       padding-top: 10px;
       &--title {
@@ -56,29 +54,24 @@
         text-align: center;
         margin-left: 10px;
       }
-    }
-    .creditcard__limit--input {
-      width: 200px;
-      display: flex;
-      margin: 10px 0;
+      .exp_month {
+        width: 200px;
+        display: flex;
+        margin: 10px 0;
+      }
       .month {
         height: 50px;
         width: 70px;
         font-size: 15px;
         margin-right: 10px;
       }
-      &-month {
-        margin-right: 10px;
-        padding: 10px;
-        line-height: 20px;
-      }
-      .day {
+      .exp_year {
         height: 50px;
         width: 70px;
         font-size: 15px;
         margin-right: 10px;
       }
-      &-day {
+      .year {
         display: inline;
         padding: 10px;
         line-height: 20px;
@@ -86,7 +79,6 @@
     }
     .security {
       width: 300px;
-      display: flex;
       margin: 10px 0;
       padding-top: 10px;
       &__title {
@@ -100,18 +92,15 @@
         line-height: 20px;
         text-align: center;
         margin-left: 10px;
+        }
+      .cvc {
+        height: 50px;
+        width: 100%;
       }
-    }
-    input {
-      height: 50px;
-      width: 100%;
-    }
-    .card__explanation {
-      padding-top: 10px;
-    }
-    .add {
-      text-align: center;
-      button {
+      .card__explanation {
+        padding-top: 10px;
+      }
+      input#token_submit {
         width: 200px;
         height: 35px;
         margin-top: 50px;
