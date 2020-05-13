@@ -1,18 +1,23 @@
 .creditcard
+  .creditcard__header
+    = link_to root_path do
+      = image_tag "material/logo/logo.png"
   .title
     クレジットカード情報入力
-    = form_tag(pay_creditcard_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
-      .information
-        .information__number
-          %label.information__number--title カード番号
-          %span.information__number--required 必須
-          = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ", maxlength: "16", type: "text", id: "card_number"
-        =image_tag "material/credit/creditcard-company.png"
+  = form_tag(pay_creditcard_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+    .information
+      .information__number
+        %label.information__number--title カード番号
+        %span.information__number--required 必須
         %br
-        .creditcard__limit
-          %label.creditcard__limit--title 有効期限
-          %span.creditcard__limit--required 必須
-          %br
+        = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ", maxlength: "16", type: "text", id: "card_number"
+      =image_tag "material/credit/creditcard-company.png"
+      %br
+      .creditcard__limit
+        %label.creditcard__limit--title 有効期限
+        %span.creditcard__limit--required 必須
+        %br
+        .creditcard__limit--select
           %select#exp_month{name: "exp_month", type: "text"} 
             %option{value:"01"} 1
             %option{value:"02"} 2
@@ -40,13 +45,13 @@
             %option{value: "2029"}29
             %option{value: "2030"}30
           %span.year 年
-          %br
-        .security
-          %label.security__title セキュリティコード
-          %span.security__required 必須
-          = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
-          %br
-          %a.card__explanation{href: "#"} カード裏面の番号とは？
-          #card_token
-          = submit_tag "追加する", id: "token_submit"
-        
+        %br
+      .security
+        %label.security__title セキュリティコード
+        %span.security__required 必須
+        = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+        %br
+        %a.card__explanation{href: "#"} カード裏面の番号とは？
+      #card_token
+      = submit_tag "追加する", id: "token_submit"
+    
