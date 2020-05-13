@@ -45,7 +45,7 @@
                 %tr
                   %th カテゴリー
                   %td
-                    %a{:href => "#"}
+                    = link_to "#" do
                       = @item.category.parent.parent.name
                       %br
                       %i{class: "fas fa-chevron-right"}
@@ -71,7 +71,7 @@
                 %tr
                   %th 発送元の地域
                   %td
-                    %a{:href => "#"}
+                    = link_to "#" do
                       = @item.region
                 %tr
                   %th 発送日の目安
@@ -84,7 +84,7 @@
                 お気に入り 0
             %ul.optional
               %li.optionalBtn
-                %a{:href => "#"}
+                = link_to "#" do
                   %i.fa.fa-flag
                   不適切な商品の通報
         .commentBox
@@ -103,14 +103,14 @@
               コメントする
       %ul.links
         %li
-          %a{:href => "#"}
+          = link_to "#" do
             %i.fa.fa-angle-left
             %span
             前の商品
         %li
-          %a{:href => "#"}
+          = link_to "#" do
             %span 後ろの商品
             %i.fa.fa-angle-right
       .relatedItems
-        %a{:href => "#"} ベビー・キッズをもっと見る
+        = link_to "ベビー・キッズをもっと見る", "#"
         .productLists
