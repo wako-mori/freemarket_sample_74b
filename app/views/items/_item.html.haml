@@ -1,9 +1,7 @@
 .productList
   = link_to item_path(item.id) do
     .productList--img
-      - item.images.each.with_index(1) do |image,i|
-        - if i == 1
-          = image_tag("#{image.image}")
+      = image_tag ("#{item.images.first.image}")
     .productList--body
       = item.name
       %h3.name

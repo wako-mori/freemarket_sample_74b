@@ -9,22 +9,14 @@
           .itemBox__body
             %ul
               %li
-                - @item.images.each.with_index(1) do |image,i|
-                  - if i == 1
-                    = image_tag("#{image.image}")
+                = image_tag("#{@item.images.first.image}")
                 %ul
                   %li
-                    - @item.images.each.with_index(1) do |image,i|
-                      - if i == 2
-                        = image_tag("#{image.image}")
+                    = image_tag("#{@item.images.first.image}")
                   %li
-                    - @item.images.each.with_index(1) do |image,i|
-                      - if i == 3
-                        = image_tag("#{image.image}")
+                    = image_tag("#{@item.images.first.image}")
                   %li
-                    - @item.images.each.with_index(1) do |image,i|
-                      - if i == 4
-                        = image_tag("#{image.image}")
+                    = image_tag("#{@item.images.first.image}")
           .itemBox__price
             %span
               = "#{@item.price}円"
