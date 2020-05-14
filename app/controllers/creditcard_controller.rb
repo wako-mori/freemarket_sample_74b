@@ -26,12 +26,13 @@ class CreditcardController < ApplicationController
   end
 
   def delete
-    @card.present?
+    if @card.present?
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
       @card.delete
       redirect_to action: "new"
+    end
   end
 
   def show
