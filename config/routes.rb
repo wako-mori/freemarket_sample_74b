@@ -1,6 +1,4 @@
 Rails.application.routes.draw do 
-  get 'orders/index'   
-  get 'users/show'
 
   root 'items#index'
   devise_for :users
@@ -15,10 +13,14 @@ Rails.application.routes.draw do
       # 編集箇所ここまで
     end
     resources :orders, only: [:index] do
+      collection do
+        get 'done', to: 'orders#done'
+        post 'pay', to: 'orders#pay'
+      end
     end
   end
 
-  resources :users, only: [:index, :new] do
+  resources :users, only: [:index, :new, :show] do
   end
 
   resources :creditcard, only: [:new, :show] do

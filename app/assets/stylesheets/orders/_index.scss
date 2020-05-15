@@ -27,7 +27,7 @@
       padding: 30px;
       justify-content: center;
       border-top: 1px solid $color-border;
-      &__image {
+      img {
         height: 100px;
         width: 100px;
       }
@@ -71,20 +71,13 @@
     .buy {
       padding: 20px;
       border-top: 1px solid $color-border;
-      button {
-        width: 200px;
-        height: 35px;
-        background-color: $theme-color;
-        border: none;
-        font-size: 15px;
-      }
     }
-  }
-  .footer {
-    text-align: center;
-    img {
-      margin: 10px auto;
+    button {
       width: 200px;
+      height: 35px;
+      background-color: $theme-color;
+      border: none;
+      font-size: 15px;
     }
   }
 }
