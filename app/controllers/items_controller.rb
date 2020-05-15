@@ -55,4 +55,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def set_images
+    @images = Image.where(item_id: params[:id])
+  end
+
 end
