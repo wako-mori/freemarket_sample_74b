@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
-  belongs_to :user, dependent: :destroy
-
-  # 画像を複数枚投稿できるようにする
+  belongs_to :user
+  
+  # 画像を複数枚投稿できるようにする
   has_many :images, dependent: :destroy, inverse_of: :item
   accepts_nested_attributes_for :images, allow_destroy: true
 
