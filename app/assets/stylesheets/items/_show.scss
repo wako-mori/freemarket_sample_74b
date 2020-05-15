@@ -131,16 +131,8 @@
             }
             li.editlBtn{
               margin-right: 10px;
-              a {
-                padding: 6px 30px;
-                display: inline-block;
-                border-radius: 4px;
-                color: $palette-White;
-                background-color: $theme-color;
-                text-decoration: none;
-              }
             }
-            li.deletelBtn{
+            li{
               a {
                 padding: 6px 30px;
                 display: inline-block;
