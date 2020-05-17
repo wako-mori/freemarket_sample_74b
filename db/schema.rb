@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< Updated upstream
 ActiveRecord::Schema.define(version: 20200508261700) do
+=======
+ActiveRecord::Schema.define(version: 20200516050558) do
+>>>>>>> Stashed changes
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "post_code",    null: false
@@ -18,18 +22,25 @@ ActiveRecord::Schema.define(version: 20200508261700) do
     t.string   "city",         null: false
     t.string   "block",        null: false
     t.string   "building"
+<<<<<<< Updated upstream
     t.integer  "phone_number"
+=======
+    t.string   "phone_number"
+>>>>>>> Stashed changes
     t.integer  "user_id",      null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
+<<<<<<< Updated upstream
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+=======
+>>>>>>> Stashed changes
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -47,6 +58,7 @@ ActiveRecord::Schema.define(version: 20200508261700) do
     t.index ["user_id_id"], name: "index_comments_on_user_id_id", using: :btree
   end
 
+<<<<<<< Updated upstream
   create_table "credit_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "card_number",      null: false
     t.integer  "expiration_year",  null: false
@@ -58,6 +70,8 @@ ActiveRecord::Schema.define(version: 20200508261700) do
     t.index ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
   end
 
+=======
+>>>>>>> Stashed changes
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image",      null: false
     t.integer  "item_id",    null: false
@@ -114,6 +128,7 @@ ActiveRecord::Schema.define(version: 20200508261700) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+<<<<<<< Updated upstream
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -125,6 +140,22 @@ ActiveRecord::Schema.define(version: 20200508261700) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "credit_cards", "users"
+=======
+    t.string   "nickname",                         null: false
+    t.string   "email",               default: "", null: false
+    t.string   "encrypted_password",  default: "", null: false
+    t.string   "family_name",                      null: false
+    t.string   "first_name",                       null: false
+    t.string   "family_name_kana",                 null: false
+    t.string   "first_name_kana",                  null: false
+    t.date     "birthday"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.datetime "remember_created_at"
+  end
+
+  add_foreign_key "addresses", "users"
+>>>>>>> Stashed changes
   add_foreign_key "images", "items"
   add_foreign_key "oreders", "items"
   add_foreign_key "oreders", "users"

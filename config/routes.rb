@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   root 'items#index'
   devise_for :users
- 
   resources :items do
     resources :orders, only: [:index] do
     end
@@ -14,4 +13,6 @@ Rails.application.routes.draw do
     resources :creditcard, only: [:new] do
     end
   end
+
+  resources :addresses, only: [:new, :create]
 end
