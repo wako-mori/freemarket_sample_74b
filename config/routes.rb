@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root 'items#index'
   devise_for :users
- 
   resources :items do
     collection do
       get "set_images"
@@ -28,4 +27,6 @@ Rails.application.routes.draw do
       post 'delete', to: 'creditcard#delete'
     end
   end
+
+  resources :addresses, only: [:new, :create]
 end
