@@ -23,25 +23,26 @@
       .header__Nav
         %ul.header__Nav__listsLeft
           %li.header__Nav__listsLeft__item.header__Nav__listsLeft__item--first
-            %a#catBtn{href: "#"} カテゴリー
-            .tree.displayNone
+            #catBtn
+              カテゴリー
+              .category-box
+                = render "layouts/category"
 
           %li.header__Nav__listsLeft__item
             %a#brandBtn{href: "#"} ブランド
             %ul.brandsPulldown.displayNone
         %ul.header__Nav__listsRight
           %li.header__Nav__listsRight__item.header__Nav__listsRight__item--login
-            %a{href: "#"} ログイン
+            - if user_signed_in?
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
+            - else
+              = link_to "ログイン", new_user_session_path
           %li.header__Nav__listsRight__item.header__Nav__listsRight__item--new
-            %a{href: "#"} 新規会員登録
+            - if user_signed_in?
+              = link_to "マイページ", "users/show"
+            - else
+              = link_to "新規会員登録", new_user_registration_path
         
-
-          -# - if user_signed_in?
-          -#   = link_to "マイページ", "#" 
-          -#   = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn" 
-          -# - else
-          -#   = link_to "新規会員登録", new_user_registration_path,  class: "header__right--btn" 
-          -#   = link_to "ログイン", new_user_session_path, class: "header__right--btn" 
     = yield
 
     %footer.Footer
