@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :addresses
 
 
-  validates :nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, :birthday, presence: true
+  validates :nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, presence: true
   validates :encrypted_password, presence: true, length:{minimum: 7 }
   
   devise :database_authenticatable, :registerable,
