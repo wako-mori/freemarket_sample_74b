@@ -1,10 +1,7 @@
 Rails.application.routes.draw do 
-  get 'orders/index'   
-  get 'users/show'
 
   root 'items#index'
   devise_for :users
- 
   resources :items do
     collection do
       get "set_images"
@@ -13,10 +10,14 @@ Rails.application.routes.draw do
       get "set_grandchildren"
     end
     resources :orders, only: [:index] do
+      collection do
+        get 'done', to: 'orders#done'
+        post 'pay', to: 'orders#pay'
+      end
     end
   end
 
-  resources :users, only: [:index, :new] do
+  resources :users, only: [:index, :new, :show] do
   end
 
   resources :creditcard, only: [:new, :show] do
@@ -26,4 +27,6 @@ Rails.application.routes.draw do
       post 'delete', to: 'creditcard#delete'
     end
   end
+
+  resources :addresses, only: [:new, :create]
 end
