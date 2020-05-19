@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       customer =Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
+      @address = Address.find_by(user_id: current_user.id)
     end
   end
 
@@ -23,6 +24,7 @@ class OrdersController < ApplicationController
   end
 
   def done
+    Item.update(soldout: current_user.id)
   end
 
   private

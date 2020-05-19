@@ -201,21 +201,56 @@
                 color: #333;
                 align-items: center;
                 position: relative;
-                &__icon {
+                &__icon1 {
                   position: absolute;
-                  right :40px;
+                  right :25px;
                   top :15px;
                   color: #888888;
                   cursor: pointer;
                   font-size: 17px;
                 }
-                &__year {
+                &__icon2 {
+                  position: absolute;
+                  right :120px;
+                  top :15px;
+                  color: #888888;
+                  cursor: pointer;
+                  font-size: 17px;
+                }
+                &__icon3 {
+                  position: absolute;
+                  right :210px;
+                  top :15px;
+                  color: #888888;
+                  cursor: pointer;
+                  font-size: 17px;
+                }
+                .year {
                   height: 48px;
                   width: 76px;
                   background-color: #ffffff;
                   -webkit-appearance:none;
                   padding: 0 10px;
                   cursor : pointer;
+                  font-size: 15px;
+                }
+                .month {
+                  height: 48px;
+                  width: 76px;
+                  background-color: #ffffff;
+                  -webkit-appearance:none;
+                  padding: 0 10px;
+                  cursor : pointer;
+                  font-size: 15px;
+                }
+                .day {
+                  height: 48px;
+                  width: 76px;
+                  background-color: #ffffff;
+                  -webkit-appearance:none;
+                  padding: 0 10px;
+                  cursor : pointer;
+                  font-size: 15px;
                 }
                 span {
                   background-color: #ffffff;
