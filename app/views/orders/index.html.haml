@@ -43,7 +43,7 @@
         %li
           %a{href: "#"} 変更する
       .shipping__address
-        〇〇県▲▲市
+        = @address.prefectures
     .buy
     = form_tag(action: :pay, method: :post) do
       %button{type:'submit'}
