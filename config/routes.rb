@@ -1,7 +1,17 @@
 Rails.application.routes.draw do 
 
   root 'items#index'
-  devise_for :users
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+  devise_scope :user do
+    get 'addresses', to: 'users/registrations#new_address'
+    post 'addresses', to: 'users/registrations#create_address'
+  end
+  
+
+
   resources :items do
     collection do
       get "set_images"
@@ -28,5 +38,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :addresses, only: [:new, :create]
+  # resources :addresses, only: [:new, :create]
 end
