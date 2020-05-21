@@ -2,10 +2,12 @@
   .top
     = link_to root_path do
       = image_tag 'material/logo/logo.png', class: "top__image"
-  = form_for (@address) do |f|  
+  -# =form_for(@address, url: addresses_path, method: :post) do |f|
+  = form_for @address do |f|  
     .main   
       .main__box
         %h2.main__box__top 住所登録
+        = render "devise/shared/error_messages", resource: @address
         .main__box__bottom
           .main__box__bottom__content
             .main__box__bottom__content__group2
