@@ -38,6 +38,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
 
+  def show
+    @user = User.find(params[:id])
+    render layout: 'compact'
+  end
+
+  def show_address
+    # @address = Addresses.where(user_id: current_user.id)
+    @address = Address.find_by(user_id: current_user.id)
+    render layout: 'compact'
+  end
+
+
   private
   def address_params
     params.require(:address).permit(:post_code, :prefectures, :city, :block, :building, :phone_number)  

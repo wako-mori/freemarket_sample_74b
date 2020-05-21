@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   devise_scope :user do
+    get 'users/:id', to: 'users/registrations#show'
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
+   get 'addresses/show', to: 'users/registrations#show_address'
   end
   
 
@@ -27,8 +29,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:index, :new, :show] do
-  end
+  # resources :users, only: [:index, :new, :show] do
+  # end
 
   resources :creditcard, only: [:new, :show] do
     collection do
