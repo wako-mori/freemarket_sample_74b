@@ -9,10 +9,16 @@ class User < ApplicationRecord
   # has_many :credit_card 
   has_many :addresses
 
-
-  validates :nickname, :family_name, :first_name, :family_name_kana, :first_name_kana, presence: true
-  validates :encrypted_password, presence: true, length:{minimum: 7 }
+#バリデーション
+  validates :nickname,           presence: true
+  validates :encrypted_password, presence: true, length: {minimum: 7 }
+  validates :family_name,        presence: true
+  validates :first_name,         presence: true
+  validates :family_name_kana,   presence: true
+  validates :first_name_kana,    presence: true
+  validates :birthday,           presence: true
   
+  #deviseのバリデーション
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
 end
