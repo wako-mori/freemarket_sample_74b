@@ -21,6 +21,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :new_address
   end
 
+  def new_address
+  end
 
 
   def create_address
