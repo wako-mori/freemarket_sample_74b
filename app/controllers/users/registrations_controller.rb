@@ -21,7 +21,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :new_address
   end
 
-
+  def new_address
+  end
 
   def create_address
     @user = User.new(session["devise.regist_data"]["user"])
@@ -36,7 +37,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(:user, @user)
     redirect_to root_path
   end
-
 
   def show
     @user = User.find(params[:id])
