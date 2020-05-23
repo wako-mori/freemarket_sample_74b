@@ -20,8 +20,9 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.valid?
       @item.save
-    else
       redirect_to new_item_path
+    else
+      render :new
     end
   end
 
