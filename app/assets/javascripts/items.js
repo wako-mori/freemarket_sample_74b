@@ -108,9 +108,16 @@ $(document).on('turbolinks:load',(function(){
           $(".flexbox").append(`<input class="file-field" type="file" name="item[images_attributes][${index[1]}][image]" id="item_images_attributes_${index[1]}_image">`);
           $("#image-wrapper").attr("for",`item_images_attributes_${index[1]}_image`);
           index.shift();
-          if(index.length > 5){
+          if(index.length > 5 ){
+            $(".new-wrapper__main__image-field").css("width",(index.length - 5)*124);
+          }else if(index.length == 10){
             $(".new-wrapper__main__image-field").css("display","flex");
-            $(".new-wrapper__main__image-field").css("width",(index.length-5)*124);           
+            $(".new-wrapper__main__image-field").css("width",620);
+          }else if(index.length == 0){
+            $(".new-wrapper__main__image-field").css("display","none");
+          }else{
+            $(".new-wrapper__main__image-field").css("display","flex");
+            $(".new-wrapper__main__image-field").css("width",124);
           }
         }
       }
