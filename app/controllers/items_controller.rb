@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.images.new
+    @item.images.build
   end
 
   def show
@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
     if @item.valid?
       @item.save
     else
-      redirect_to new_items_path
+      redirect_to new_item_path, flash: { error: @item.errors.full_messages }
     end
   end
 
