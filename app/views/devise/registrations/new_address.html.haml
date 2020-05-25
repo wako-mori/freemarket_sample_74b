@@ -18,7 +18,7 @@
               %label 都道府県
               %span 必須
               = icon("fa", "check", class: "main__box__bottom__content__group2__icon")
-              = f.select :prefectures, [["北海道","北海道"], ["青森県","青森県"]], {}, class: "main__box__bottom__content__group2__form"
+              = f.select :prefectures, Address.prefectures.keys, {prompt: "--未選択--"}, {class: 'main__box__bottom__content__group2__form'}
             .main__box__bottom__content__group2
               %label 市区町村
               %span 必須
