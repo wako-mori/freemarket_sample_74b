@@ -36,7 +36,11 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(item_params)
-    redirect_to root_path
+    if @item.valid?
+      @item.save
+    else
+      redirect_to edit_item_path, flash: { error: @item.errors.full_messages }
+    end
   end
 
   def set_parents
