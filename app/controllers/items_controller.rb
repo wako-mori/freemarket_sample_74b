@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :set_images, only: [:edit, :update, :destroy]
+  before_action :set_images, only: [:edit, :update]
 
   def index
     @items = Item.all.order(created_at: :desc)
@@ -31,7 +31,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
