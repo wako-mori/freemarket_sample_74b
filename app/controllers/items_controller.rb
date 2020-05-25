@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
     if @item.valid?
       @item.save
     else
-      redirect_to new_item_path
+      redirect_to new_items_path
     end
   end
 
