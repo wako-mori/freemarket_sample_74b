@@ -3,7 +3,6 @@
     .new-wrapper__header
       = link_to root_path do
         = image_tag "material/logo/logo.png"
-    = render 'layouts/error_messages'
     .new-wrapper__main
       .new-wrapper__main__errors-message
         - if flash[:error].present?
@@ -15,8 +14,8 @@
       .new-wrapper__main__text
         最大10枚までアップロードできます
       .flexbox
-        - if @item.images.count != 0
         .new-wrapper__main__preview
+          - if @item.images.count != 0
           - num = 0
             - @item.images.each do |i|
             - num += 1
