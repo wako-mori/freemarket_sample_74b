@@ -6,12 +6,10 @@ $(document).on('turbolinks:load',(function(){
     
     // 新規出品
     if( loc.indexOf("new") != -1){
-      console.log(index);
       // デリート機能
       $(".flexbox").on("click", ".delete-btn", function(){
         var targetIndex = Number($(this).attr("index"));
         index.push(targetIndex);
-        console.log($(this).parent().parent().attr("class"));
 
         if($(this).parent().parent().attr("class") == "new-wrapper__main__preview-first"){
           $(".new-wrapper__main__preview .new-wrapper__main__preview__image:first").appendTo(".new-wrapper__main__preview-first");
@@ -77,7 +75,6 @@ $(document).on('turbolinks:load',(function(){
 
     // 編集機能
     if( loc.indexOf("edit") != -1){
-      console.log(index)
       //  .new-wrapper__main__previewの子要素の数を取得する
       // 要素を取得
       var element = document.getElementsByClassName("new-wrapper__main__preview__image__img");
