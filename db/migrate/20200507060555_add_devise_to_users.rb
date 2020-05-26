@@ -8,7 +8,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.0]
       t.string :first_name,         null: false 
       t.string :family_name_kana,   null: false
       t.string :first_name_kana,    null: false
-      t.date :birthday            
+      t.date :birthday,             null: false
       t.timestamps
       
       t.datetime :remember_created_at

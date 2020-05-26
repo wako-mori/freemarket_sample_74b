@@ -21,7 +21,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :new_address
   end
 
-
+  def new_address
+  end
 
   def create_address
     @user = User.new(session["devise.regist_data"]["user"])
@@ -35,6 +36,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
     redirect_to root_path
+  end
+
+  def show
+    @user = User.find(params[:id])
+    render layout: 'compact'
+  end
+
+  def show_address
+    # @address = Addresses.where(user_id: current_user.id)
+    @address = Address.find_by(user_id: current_user.id)
+    render layout: 'compact'
   end
 
 

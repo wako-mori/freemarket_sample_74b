@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
   end
 
   def done
-    Item.update(soldout: current_user.id)
+    @item.update(soldout: current_user.id)
   end
 
   private
